@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Demo Page</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body class="min-h-screen flex flex-col items-center justify-center bg-[#0d0d0d] overflow-hidden">
+
+  <!-- Background blobs -->
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+
+  <!-- Main card -->
+  <div class="card relative z-10 flex flex-col items-center gap-8 p-10 rounded-3xl">
+
+    <div class="text-xl text-white font-bold tracking-widest uppercase mt-2">
+      <span>เทาเทา (เตาเตา/ถังเทา/ถั่วเทา/ปังเตา) อ้วนไหม ?</span>
+    </div>
+
+    <!-- Image -->
+    <div class="img-wrapper">
+      <img src="assets/images/seal.jpg" alt="seal" class="rounded-2xl w-80 h-200 object-cover shadow-lg" />
+      <!-- <img src="https://picsum.photos/seed/demo42/320/200" alt="demo"
+        class="rounded-2xl w-72 h-44 object-cover shadow-lg" /> -->
+      <div class="img-shine"></div>
+    </div>
+
+    <!-- Buttons -->
+    <div id="btn-container" class="flex gap-6 items-center justify-center">
+
+      <!-- Left button -->
+      <button id="btn-left" onclick="openModal()">
+        <span>✨ อ้วนมาก!</span>
+      </button>
+
+      <!-- Right button -->
+      <button id="btn-right" onclick="growBtn()">
+        <span id="btn-right-label">🚀 ไม่อ้วน</span>
+      </button>
+
+    </div>
+
+    <!-- Click counter hint -->
+    <p id="hint" class="text-xs text-white/30 tracking-widest uppercase">เลือกคำตอบที่ควรเลือก</p>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal" class="modal-overlay hidden" onclick="closeModal()">
+    <div class="modal-box" onclick="event.stopPropagation()">
+      <div class="yay-emoji">🎉</div>
+      <h2 class="text-3xl font-black text-white mb-2" style="font-family: 'Georgia', serif;">YAY!</h2>
+      <p class="text-white/60 mb-6 text-sm">You found the happy button!</p>
+      <button onclick="closeModal()" class="modal-close-btn">Close & Reset</button>
+    </div>
+  </div>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+
+</html>
