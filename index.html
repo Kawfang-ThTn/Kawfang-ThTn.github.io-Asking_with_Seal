@@ -2,64 +2,66 @@
 <html lang="th">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Demo Page</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asking Seal</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body class="min-h-screen flex flex-col items-center justify-center bg-[#0d0d0d] overflow-hidden">
 
-  <!-- Background blobs -->
-  <div class="blob blob-1"></div>
-  <div class="blob blob-2"></div>
+  <!-- Key light (Background) -->
+  <div class="light-pos Key-light-01 fixed pointer-events-none"></div>
+  <div class="light-pos Key-light-02 fixed pointer-events-none"></div>
 
-  <!-- Main card -->
-  <div class="card relative z-10 flex flex-col items-center gap-8 p-10 rounded-3xl">
+  <!-- Main Card -->
+  <div
+    class="relative z-10 flex flex-col items-center gap-4 py-4 px-14 bg-white/5 rounded-3xl border border-white/5 backdrop-blur-2xl shadow-2xl">
 
-    <div class="text-xl text-white font-bold tracking-widest uppercase mt-2">
-      <span>เทาเทา (เตาเตา/ถังเทา/ถั่วเทา/ปังเตา) อ้วนไหม ?</span>
-    </div>
+    <!-- Question -->
+    <div class="text-white text-xl font-bold">เทาเทา (เตาเตา/ถังเทา/ถั่วเทา/ปังเตา) อ้วนไหม ?</div>
 
     <!-- Image -->
     <div class="img-wrapper">
-      <img src="assets/images/seal.jpg" alt="seal" class="rounded-2xl w-80 h-200 object-cover shadow-lg" />
-      <!-- <img src="https://picsum.photos/seed/demo42/320/200" alt="demo"
-        class="rounded-2xl w-72 h-44 object-cover shadow-lg" /> -->
-      <div class="img-shine"></div>
+      <img src="assets/images/seal.jpg" alt="seal_image" class="object-cover rounded-3xl w-80">
     </div>
 
     <!-- Buttons -->
-    <div id="btn-container" class="flex gap-6 items-center justify-center">
+    <div class="btn-wrapper mt-2 flex gap-4 items-center justify-center">
 
-      <!-- Left button -->
-      <button id="btn-left" onclick="openModal()">
-        <span>✨ อ้วนมาก!</span>
+      <!-- Left Button -->
+      <button id="btn-left" class="text-white bg-linear-to-br from-cyan-500 to-violet-500 px-6 py-2 rounded-3xl">
+        <span>✨ อ้วนมาก !</span>
       </button>
 
-      <!-- Right button -->
-      <button id="btn-right" onclick="growBtn()">
-        <span id="btn-right-label">🚀 ไม่อ้วน</span>
+      <!-- Right Button -->
+      <button id="btn-right"
+        class="text-white bg-linear-to-br from-rose-300 to-red-500 px-6 py-2 rounded-3xl transition-all duration-300">
+        <span id="btn-right-label">🚀 ไม่อ้วนเลย !</span>
       </button>
 
     </div>
 
-    <!-- Click counter hint -->
-    <p id="hint" class="text-xs text-white/30 tracking-widest uppercase">เลือกคำตอบที่ควรเลือก</p>
+    <!-- Hint -->
+    <p id="hint" class="text-slate-400 text-xs tracking-wide">คำใบ้ : ให้ตอบตามความเป็นจริง</p>
+
   </div>
 
   <!-- Modal -->
-  <div id="modal" class="modal-overlay hidden" onclick="closeModal()">
-    <div class="modal-box" onclick="event.stopPropagation()">
-      <div class="yay-emoji">🎉</div>
-      <h2 class="text-3xl font-black text-white mb-2" style="font-family: 'Georgia', serif;">YAY!</h2>
-      <p class="text-white/60 mb-6 text-sm">You found the happy button!</p>
-      <button onclick="closeModal()" class="modal-close-btn">Close & Reset</button>
+  <div id="modal" class="hidden fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50">
+    <div class="bg-[#141414] border border-white/10 rounded-3xl p-12 text-center max-w-sm w-[90%] shadow-2xl">
+      <div class="text-6xl mb-3">🎉</div>
+      <h2 class="text-3xl font-black text-white mb-2">YAY!</h2>
+      <p class="text-white/60 mb-6 text-sm">ขอบคุณที่ตอบตามความเป็นจริง!</p>
+      <button onclick="closeModal()"
+        class="text-white bg-linear-to-br from-cyan-500 to-violet-500 px-6 py-2 rounded-3xl font-bold">
+        ปิด & รีเซ็ต
+      </button>
     </div>
   </div>
 
-  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/script.js" defer></script>
 </body>
 
 </html>
